@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>MIDI Piano Simulator</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <h1>🎹 MIDI Piano Simulator</h1>
+        
+        <div class="controls">
+            <div class="control-group">
+                <label>Instrument</label>
+                <select id="instrument">
+                    <option value="sine">Piano</option>
+                    <option value="square">Organ</option>
+                    <option value="sawtooth">Synth</option>
+                    <option value="triangle">Flute</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Volume</label>
+                <input type="range" id="volume" min="0" max="100" value="50">
+            </div>
+            
+            <div class="control-group">
+                <label>Octave</label>
+                <select id="octave">
+                    <option value="3">3</option>
+                    <option value="4" selected>4</option>
+                    <option value="5">5</option>
+                    <option value="6">6</option>
+                </select>
+            </div>
+            
+            <div class="control-group">
+                <label>Reverb</label>
+                <input type="range" id="reverb" min="0" max="100" value="30">
+            </div>
+        </div>
+
+        <div class="visualizer" id="visualizer"></div>
+
+        <div class="piano" id="piano"></div>
+
+        <div class="recording-controls">
+            <button class="btn" id="recordBtn">🎙️ Record</button>
+            <button class="btn" id="playBtn">▶️ Play</button>
+            <button class="btn" id="stopBtn">⏹️ Stop</button>
+            <button class="btn" id="clearBtn">🗑️ Clear</button>
+            <button class="btn" id="downloadBtn">💾 Download MIDI</button>
+        </div>
+
+        <div class="instructions">
+            <p>Click keys to play or use your keyboard!</p>
+            <div class="keyboard-hints">
+                <span class="hint">A-K = White Keys</span>
+                <span class="hint">W,E,T,Y,U = Black Keys</span>
+                <span class="hint">Space = Sustain</span>
+            </div>
+        </div>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
